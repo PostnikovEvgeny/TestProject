@@ -3,11 +3,16 @@ package org.example;
 import Hierarchy.Test;
 import Hierarchy.Trial;
 import Hierarchy.Exam;
+import Printer.ConsoleCollectionPrinter;
+
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
-        Trial t = new Trial("Trial");
+        ConsoleCollectionPrinter<Trial> printer = new ConsoleCollectionPrinter<Trial>();
+        /*Trial t = new Trial("Trial");
         System.out.println(t.GetName());
         t.RandomInit();
         System.out.println(t.GetName());
@@ -24,7 +29,13 @@ public class Main {
         System.out.println(ex.GetMark());
         ex.RandomInit();
         System.out.println(ex.GetName());
-        System.out.println(ex.GetMark());
+        System.out.println(ex.GetMark());*/
+        ArrayList<Trial> list = new ArrayList<Trial>();
+        list.add(new Trial());
+        list.add(new Test());
+        list.add(new Exam());
+        printer.PrintCollection(list);
+
     }
 
 }

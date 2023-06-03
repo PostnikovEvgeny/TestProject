@@ -28,4 +28,8 @@ public class Trial
         this.name = namesOfSubjects[rnd.nextInt(0, namesOfSubjects.length)];
     }
 
+    @Override
+    public String toString() {
+        return (name).toString();
+    }
 }

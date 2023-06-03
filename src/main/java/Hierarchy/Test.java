@@ -44,5 +44,8 @@ public class Test extends Trial {
         this.score = rnd.nextInt(0,101);
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString()+" "+score;
+    }
 }

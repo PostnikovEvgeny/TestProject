@@ -44,4 +44,9 @@ public class Exam extends Trial {
         char[] marks = { 'A', 'B', 'C', 'D', 'E', 'F' };
         this.mark = marks[rnd.nextInt(0, marks.length)];
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+" "+mark;
+    }
 }
