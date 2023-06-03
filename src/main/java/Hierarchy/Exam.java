@@ -1,8 +1,9 @@
 package Hierarchy;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Exam extends Trial {
+public class Exam extends Trial implements Serializable {
 
     char mark; // A - 5  B - 4  C - 3  D - 3  E - 2 F - 2
     static Random rnd = new Random();

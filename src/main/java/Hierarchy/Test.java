@@ -1,8 +1,9 @@
 package Hierarchy;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Test extends Trial {
+public class Test extends Trial implements Serializable {
 
     private int score;
     static Random rnd = new Random();

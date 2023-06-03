@@ -1,8 +1,9 @@
 package Hierarchy;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Trial
+public class Trial implements Serializable
 {
     protected String name;
     static Random rnd = new Random();
