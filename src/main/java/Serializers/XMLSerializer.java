@@ -3,22 +3,22 @@ package Serializers;
 import Interfaces.ISerialize;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collection;
 
-public class JSONSerializer<T> implements ISerialize<T> {
-
+public class XMLSerializer<T> implements ISerialize<T> {
+    @Override
     public void SerializeTo(Collection<T> collection) {
-       // Gson gson = new Gson();
-        try(FileWriter writer = new FileWriter("D://JSONCollection.json"))
+        try(FileWriter writer = new FileWriter("D://XMLCollection.xml"))
         {
             writer.toString();
-            ObjectMapper mapper = new ObjectMapper();
+            XmlMapper mapper = new XmlMapper();
+            mapper.enable(SerializationFeature.INDENT_OUTPUT);
+            // mapper.enableDefaultTyping();
 
-           // mapper.enableDefaultTyping();
             mapper.writeValue(writer, collection);
             //mapper.enable(SerializationFeature.INDENT_OUTPUT);
             //gson.toJson(collection,writer);
