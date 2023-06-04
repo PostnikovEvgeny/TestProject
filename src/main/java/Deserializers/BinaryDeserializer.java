@@ -12,7 +12,7 @@ public class BinaryDeserializer<T> implements IDeserialize<T> {
 
     public Collection<T> DeserializeFrom(String filepath) {
 
-        ArrayList<T> newList= new ArrayList<T>();
+        ArrayList<T> newList= new ArrayList<>();
         try(ObjectInputStream stream = new ObjectInputStream(new FileInputStream(filepath)))
         {
             newList=((ArrayList<T>)stream.readObject());

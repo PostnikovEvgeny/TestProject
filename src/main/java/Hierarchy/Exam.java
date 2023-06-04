@@ -1,8 +1,15 @@
 package Hierarchy;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 import java.io.Serializable;
 import java.util.Random;
 
+//@JsonTypeName("exam")
+@JsonAutoDetect
 public class Exam extends Trial implements Serializable {
 
     char mark; // A - 5  B - 4  C - 3  D - 3  E - 2 F - 2
@@ -18,12 +25,12 @@ public class Exam extends Trial implements Serializable {
         super(name);
         this.mark = mark;
     }
-    public String GetMark()
+    public String getMark()
     {
         return String.valueOf(this.mark);
     }
 
-    public void SetMark(char mark)
+    public void setMark(char mark)
     {
         try {
             if (mark == 'A' || mark == 'B' || mark == 'C' || mark == 'D' || mark =='E' || mark == 'F') {
@@ -48,6 +55,6 @@ public class Exam extends Trial implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString()+" "+mark;
+        return super.toString()+" "+getMark();
     }
 }

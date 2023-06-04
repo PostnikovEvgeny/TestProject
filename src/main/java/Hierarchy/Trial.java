@@ -1,11 +1,25 @@
 package Hierarchy;
 
+import com.fasterxml.jackson.annotation.*;
+
 import java.io.Serializable;
 import java.util.Random;
 
+
+//@JsonAutoDetect
+/*@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property="type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value=Test.class, name="test"),
+        @JsonSubTypes.Type(value=Exam.class, name="exam")
+})*/
+/*@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property="type")
+@JsonSubTypes({ @JsonSubTypes.Type(value = Test.class, name = "test"),
+        @JsonSubTypes.Type(value = Exam.class, name = "exam") })*/
+@JsonAutoDetect
 public class Trial implements Serializable
 {
-    protected String name;
+
+    private String name;
     static Random rnd = new Random();
     public Trial()
     {
@@ -15,11 +29,11 @@ public class Trial implements Serializable
     {
         this.name = name;
     }
-    public String GetName()
+    public String getName()
     {
         return this.name;
     }
-    public void SetName(String name)
+    public void setName(String name)
     {
         this.name = name;
     }
@@ -31,6 +45,7 @@ public class Trial implements Serializable
 
     @Override
     public String toString() {
-        return (name).toString();
+
+        return getName().toString();
     }
 }

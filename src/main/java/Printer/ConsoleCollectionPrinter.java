@@ -13,7 +13,7 @@ public class ConsoleCollectionPrinter<T> implements ICollectionPrinter<T> {
         }
         else {
             for (T item : list) {
-                System.out.println(item);
+                System.out.println(item.toString());
             }
         }
     }

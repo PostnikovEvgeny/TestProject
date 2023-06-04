@@ -1,8 +1,16 @@
 package Hierarchy;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 import java.io.Serializable;
 import java.util.Random;
 
+
+//@JsonTypeName("test")
+@JsonAutoDetect
 public class Test extends Trial implements Serializable {
 
     private int score;
@@ -19,11 +27,11 @@ public class Test extends Trial implements Serializable {
         this.score = score;
     }
 
-    public String GetScore()
+    public String getScore()
     {
         return Integer.toString(this.score);
     }
-    public void SetScore(int score)
+    public void setScore(int score)
     {
         try {
             if (score >= 0 || score <= 100) {
@@ -47,6 +55,6 @@ public class Test extends Trial implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString()+" "+score;
+        return super.toString()+" "+getScore();
     }
 }
