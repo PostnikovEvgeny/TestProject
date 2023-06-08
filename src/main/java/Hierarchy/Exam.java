@@ -25,24 +25,18 @@ public class Exam extends Trial implements Serializable {
         super(name);
         this.mark = mark;
     }
-    public String getMark()
+    public char getMark()
     {
-        return String.valueOf(this.mark);
+        return this.mark;
     }
 
     public void setMark(char mark)
     {
-        try {
-            if (mark == 'A' || mark == 'B' || mark == 'C' || mark == 'D' || mark =='E' || mark == 'F') {
-                this.mark = mark;
-            }
-            else{
-                throw new Exception("Оценка должна входить в диапазон A - F");
-            }
+        if (mark == 'A' || mark == 'B' || mark == 'C' || mark == 'D' || mark =='E' || mark == 'F') {
+            this.mark = mark;
         }
-        catch(Exception ex){
-
-            System.out.println(ex.getMessage());
+        else{
+            throw new IllegalArgumentException("Оценка должна входить в диапазон A - F");
         }
     }
 

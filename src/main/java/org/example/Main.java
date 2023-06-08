@@ -11,6 +11,7 @@ import Printer.ConsoleCollectionPrinter;
 import Serializers.BinarySerializer;
 import Serializers.JSONSerializer;
 import Serializers.XMLSerializer;
+import com.sun.source.doctree.TextTree;
 
 
 import java.io.IOException;
@@ -38,7 +39,7 @@ public class Main {
         System.out.println(ex.GetName());
         System.out.println(ex.GetMark());*/
 
-        BinarySerializer<Trial> serializer = new BinarySerializer<>();
+        /*BinarySerializer<Trial> serializer = new BinarySerializer<>();
         BinaryDeserializer<Trial> deserializer = new BinaryDeserializer<>();
         JSONSerializer<Trial> jsnSerializer = new JSONSerializer<>();
         JSONDeserializer<Trial> jsnDeserializer = new JSONDeserializer<>();
@@ -74,7 +75,9 @@ public class Main {
         list.clear();
         printer.PrintCollection(list);
         list = (ArrayList<Trial>)xmlDeserializer.DeserializeFrom("D://XMLCollection.xml");
-        printer.PrintCollection(list);
+        printer.PrintCollection(list);*/
+        Test t = new Test("Ин яз",88);
+        System.out.println(t.toString());
 
     }
 

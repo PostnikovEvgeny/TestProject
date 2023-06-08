@@ -27,23 +27,17 @@ public class Test extends Trial implements Serializable {
         this.score = score;
     }
 
-    public String getScore()
+    public int getScore()
     {
-        return Integer.toString(this.score);
+        return this.score;
     }
     public void setScore(int score)
     {
-        try {
-            if (score >= 0 || score <= 100) {
-                this.score = score;
-            }
-            else{
-                throw new Exception("Число должно входить в диапазон 0-100");
-            }
+        if (score >= 0 && score <= 100) {
+            this.score = score;
         }
-        catch(Exception ex){
-
-            System.out.println(ex.getMessage());
+        else{
+            throw new IllegalArgumentException("Число должно входить в диапазон 0-100");
         }
 
     }
@@ -55,6 +49,6 @@ public class Test extends Trial implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString()+" "+getScore();
+        return super.toString()+" "+this.getScore();
     }
 }
